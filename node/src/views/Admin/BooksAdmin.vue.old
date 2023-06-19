@@ -1,0 +1,7 @@
+<script setup lang="ts"></script>
+
+<template>
+  <div>
+    Welcome to admin books page
+  </div>
+</template>

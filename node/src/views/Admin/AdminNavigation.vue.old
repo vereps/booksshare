@@ -1,0 +1,23 @@
+<script setup lang="ts"></script>
+
+<template>
+
+    <nav class="nav flex-column admin-navigation">
+      <div class="container-fluid">
+        <router-link class="nav-link" to="/admin/">Home</router-link>
+        <router-link class="nav-link" to="/admin/users">Users</router-link>
+        <router-link class="nav-link" to="/admin/books">Books</router-link>
+      </div>
+    </nav>
+
+</template>
+
+<style lang="scss">
+.admin-navigation {
+    background-color: rgb(216, 216, 216);
+
+    .nav-link.active {
+        font-weight: bold;
+    }
+}
+</style>

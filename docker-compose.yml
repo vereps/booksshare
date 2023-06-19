@@ -1,0 +1,37 @@
+services:
+    nginx:
+        container_name: ca-b-nginx
+        image: nginx:1.23-alpine
+        volumes:
+            - ./docker/nginx/conf.d/default.conf:/etc/nginx/conf.d/default.conf
+            - ./src/public:/var/www/public
+        ports:
+            - 80:80
+
+    php:
+        container_name: ca-b-php
+        build: ./docker/php
+        working_dir: /var/www
+        volumes:
+            - ./src:/var/www
+        env_file:
+            - .env
+
+    mysql:
+        container_name: ca-b-mysql
+        image: mysql:8
+        env_file:
+            - .env
+        volumes:
+            - ./docker/mysql/data/mysql:/var/lib/mysql
+        ports:
+            - 3306:3306
+    node:
+        container_name: ca-b-node
+        image: node:18
+        working_dir: /app
+        volumes:
+            - ./node:/app
+        ports:
+            - 3000:3000
+        command: tail -f /dev/null
