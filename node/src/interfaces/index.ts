@@ -27,6 +27,14 @@ export type ILanguage = {
   updated_at: string | null
 }
 
+export type IAuthor = {
+  id: number
+  name: string
+  created_at: string | null
+  updated_at: string | null
+  language_id: number
+}
+
 export enum Language {
   Lithuanian = 'Lithuanian',
   English = 'English'

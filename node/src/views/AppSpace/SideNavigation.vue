@@ -5,7 +5,7 @@ const authStore = useAuthStore()
 <template>
   <nav class="nav flex-column app-space-navigation" v-if="authStore.isLoggedIn">
     <router-link class="nav-link" to="/user/books">Books</router-link>
-    <a class="nav-link" href="#">Orders</a>
+    <router-link class="nav-link" to="/user/orders">Orders</router-link>
     <router-link class="nav-link" to="/user/profile">Profile</router-link>
   </nav>
 </template>

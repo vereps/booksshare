@@ -21,6 +21,7 @@ import AdminUsers from '../views/Admin/Users.vue'
 import AdminBooks from '../views/Admin/Books/Index.vue'
 import AdminBook from '../views/Admin/Book/Index.vue'
 import AdminOrders from '../views/Admin/Orders/index.vue'
+import AdminAuthors from '../views/Admin/Authors/index.vue'
 
 import Profile from '../views/Profile/Index.vue'
 
@@ -101,6 +102,10 @@ const router = createRouter({
         {
           path: '/admin/orders',
           component: AdminOrders
+        },
+        {
+          path: '/admin/authors',
+          component: AdminAuthors
         },
         {
           path: '/admin/profile',

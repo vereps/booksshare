@@ -2,6 +2,7 @@
 
 // use App\Http\Controllers\TaskController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AuthorController;
 use App\Http\Controllers\AvatarController;
 use App\Http\Controllers\ExchangeController;
 use App\Http\Controllers\HomeController;
@@ -59,6 +60,11 @@ Route::get('/language/{id}', [LanguageController::class, 'find'])->whereNumber('
 Route::get('/books/language/{id}', [BookController::class, 'listLanguagesBooks']);
 Route::get('/users/language/{id}', [UserController::class, 'listLanguagesUsers']);
 
+Route::get('/authors', [AuthorController::class, 'list']);
+Route::get('/author/{id}', [AuthorController::class, 'show']);
+Route::post('/authors', [AuthorController::class, 'store']);
+Route::delete('/author/{id}', [AuthorController::class, 'delete'])->whereNumber('id');
+
 Route::get('/exchange-rates', [ExchangeController::class, 'index']);
 
 Route::middleware([
@@ -79,5 +85,3 @@ Route::get('/users/{id}/avatar', [AvatarController::class, 'getAvatar']);
 
 
 Route::get('/', [HomeController::class, 'list']);
-
-
