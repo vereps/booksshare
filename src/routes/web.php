@@ -11,6 +11,7 @@ use App\Http\Controllers\RegistrationController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\CoverController;
 use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\PublisherController;
 use App\Http\Controllers\UserController;
 use App\Http\Middleware\AdminMiddleware;
 use App\Http\Middleware\Authenticate;
@@ -40,6 +41,11 @@ Route::middleware([
     Route::get('/books/completed', [BookController::class, 'listAllCompleted']);
     // Route::post('/books', [BookController::class, 'create']);
     Route::get('/books/{id}', [BookController::class, 'find'])->whereNumber('id');
+
+    Route::post('/publishers', [PublisherController::class, 'create']);
+    Route::post('/publishers/{id}', [PublisherController::class, 'update'])->whereNumber('id');
+    Route::delete('/publisher/{id}', [PublisherController::class, 'delete'])->whereNumber('id');
+
     // Route::post('/books/{id}', [BookController::class, 'update'])->whereNumber('id');
     // Route::delete('/books/{id}', [BookController::class, 'delete'])->whereNumber('id');
 });
@@ -64,6 +70,9 @@ Route::get('/authors', [AuthorController::class, 'list']);
 Route::get('/author/{id}', [AuthorController::class, 'show']);
 Route::post('/authors', [AuthorController::class, 'store']);
 Route::delete('/author/{id}', [AuthorController::class, 'delete'])->whereNumber('id');
+
+Route::get('/publishers', [PublisherController::class, 'list']);
+Route::get('/publisher/{id}', [PublisherController::class, 'show']);
 
 Route::get('/exchange-rates', [ExchangeController::class, 'index']);
 
