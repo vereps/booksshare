@@ -11,6 +11,7 @@ const { isUserAdmin, isUserRegular } = roles()
     <router-link class="nav-link" to="/admin/books">Books</router-link>
     <router-link class="nav-link" to="/admin/orders">Orders</router-link>
     <router-link class="nav-link" to="/admin/authors">Authors</router-link>
+    <router-link class="nav-link" to="/admin/publishers">Publishers</router-link>
     <router-link class="nav-link" to="/admin/profile">Profile</router-link>
   </nav>
 </template>

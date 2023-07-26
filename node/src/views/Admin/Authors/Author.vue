@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import type { IAuthor } from '../../../interfaces'
-import BookLanguageInput from './BookLanguageInput.vue'
 
 const props = defineProps<{
   author: IAuthor
